@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sin∞k | استودیو حرفه‌ای توسعه وب</title>
+    <title>farh∞d | استودیو حرفه‌ای توسعه وب</title>
     <!-- فونت وزیرمتن برای فارسی و JetBrains Mono برای کدنویسی حرفه‌ای -->
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -12,19 +12,22 @@
 
     <style>
         :root {
-            --bg-void: #020308;
-            --panel-bg: rgba(9, 12, 22, 0.75);
-            --header-bg: rgba(7, 9, 18, 0.82);
-            --border-subtle: rgba(255, 255, 255, 0.1);
-            --border-highlight: rgba(99, 102, 241, 0.45);
-            --primary: #6366f1;
+            /* پالت رنگی اختصاصی آبی سلطنتی و یاقوتی فرهود (Royal Sapphire & Electric Cyan) */
+            --bg-void: #030b1e;
+            --panel-bg: rgba(7, 20, 52, 0.74);
+            --header-bg: rgba(5, 15, 42, 0.84);
+            --border-subtle: rgba(56, 189, 248, 0.2);
+            --border-highlight: rgba(0, 242, 254, 0.55);
+            --primary: #2563eb;
+            --primary-glow: #3b82f6;
             --accent-cyan: #00f2fe;
-            --accent-purple: #a855f7;
-            --text-main: #f1f5f9;
-            --text-muted: #64748b;
-            --html-color: #ff5722;
-            --css-color: #00b4d8;
-            --js-color: #eab308;
+            --accent-sky: #38bdf8;
+            --accent-indigo: #6366f1;
+            --text-main: #f0f9ff;
+            --text-muted: #93c5fd;
+            --html-color: #ff6b35;
+            --css-color: #00e5ff;
+            --js-color: #facc15;
             --success: #10b981;
             --danger: #f43f5e;
 
@@ -35,7 +38,7 @@
             --code-gutter-text: #475569;
             --code-placeholder: #94a3b8;
             --code-grid: rgba(15, 23, 42, 0.04);
-            --code-caret: #4f46e5;
+            --code-caret: #2563eb;
         }
 
         * {
@@ -59,62 +62,72 @@
             position: relative;
         }
 
-        /* ==================== پس‌زمینه فوق‌حرفه‌ای استودیو کدنویسی (IDE Pro Backdrop) ==================== */
+        /* ==================== پس‌زمینه فوق‌حرفه‌ای آبی پررنگ و یاقوتی (Royal Sapphire Backdrop) ==================== */
         .pro-studio-bg {
             position: fixed;
             inset: 0;
             z-index: 0;
             overflow: hidden;
-            background: #020308;
+            background: linear-gradient(135deg, #020817 0%, #06173e 40%, #0c2766 75%, #04102b 100%);
             pointer-events: none;
+        }
+
+        /* هاله‌های نوری عمیق آبی اقیانوسی و نئون */
+        .royal-glow-layer {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 18% 20%, rgba(37, 99, 235, 0.35) 0%, transparent 45%),
+                radial-gradient(circle at 85% 28%, rgba(0, 242, 254, 0.25) 0%, transparent 45%),
+                radial-gradient(circle at 50% 85%, rgba(56, 189, 248, 0.22) 0%, transparent 55%);
         }
 
         .dot-matrix {
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(125, 211, 252, 0.16) 1px, transparent 1px);
             background-size: 28px 28px;
-            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 100%);
+            mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 35%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 35%, transparent 100%);
         }
 
         .light-beam {
             position: absolute;
             top: -25%;
-            width: 55vw;
-            height: 75vh;
-            filter: blur(95px);
-            opacity: 0.45;
+            width: 58vw;
+            height: 78vh;
+            filter: blur(90px);
+            opacity: 0.55;
             mix-blend-mode: screen;
             transform-origin: top center;
         }
 
         .beam-1 {
-            right: 5%;
-            background: conic-gradient(from 180deg at 50% 0%, #4f46e5 0deg, #00f2fe 60deg, transparent 120deg);
+            right: 2%;
+            background: conic-gradient(from 180deg at 50% 0%, #1d4ed8 0deg, #00f2fe 65deg, transparent 130deg);
             animation: swayBeam1 14s ease-in-out infinite alternate;
         }
 
         .beam-2 {
-            left: 5%;
-            background: conic-gradient(from 180deg at 50% 0%, #ec4899 0deg, #8b5cf6 65deg, transparent 130deg);
+            left: 2%;
+            background: conic-gradient(from 180deg at 50% 0%, #0284c7 0deg, #3b82f6 55deg, #6366f1 100deg, transparent 140deg);
             animation: swayBeam2 18s ease-in-out infinite alternate;
         }
 
         .beam-bottom {
             position: absolute;
             bottom: -30%;
-            left: 25%;
-            width: 50vw;
-            height: 50vh;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.25), rgba(0, 242, 254, 0.1), transparent 70%);
+            left: 20%;
+            width: 60vw;
+            height: 55vh;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.4), rgba(0, 242, 254, 0.18), transparent 70%);
             filter: blur(80px);
             animation: pulseGlow 10s ease-in-out infinite alternate;
         }
 
         @keyframes swayBeam1 {
             0% { transform: rotate(-12deg) scale(1); }
-            100% { transform: rotate(8deg) scale(1.15); }
+            100% { transform: rotate(8deg) scale(1.16); }
         }
 
         @keyframes swayBeam2 {
@@ -123,8 +136,8 @@
         }
 
         @keyframes pulseGlow {
-            0% { opacity: 0.3; transform: scale(0.9); }
-            100% { opacity: 0.65; transform: scale(1.15); }
+            0% { opacity: 0.4; transform: scale(0.92); }
+            100% { opacity: 0.75; transform: scale(1.15); }
         }
 
         #codeMatrixCanvas {
@@ -132,7 +145,7 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.75;
+            opacity: 0.85;
         }
 
         /* ==================== Header ==================== */
@@ -149,16 +162,17 @@
             z-index: 200;
             position: relative;
             flex-shrink: 0;
+            box-shadow: 0 4px 30px rgba(2, 10, 32, 0.65);
         }
 
         header::after {
             content: '';
             position: absolute;
             bottom: -1px;
-            left: 15%;
-            right: 15%;
+            left: 10%;
+            right: 10%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.5), rgba(168, 85, 247, 0.6), transparent);
+            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.75), rgba(59, 130, 246, 0.8), transparent);
         }
 
         .brand {
@@ -171,39 +185,40 @@
             direction: ltr;
             unicode-bidi: isolate;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 25px;
+            font-size: 26px;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             display: inline-flex;
             align-items: center;
-            text-shadow: 0 0 25px rgba(99, 102, 241, 0.5);
+            text-shadow: 0 0 28px rgba(56, 189, 248, 0.65);
         }
 
         .logo .inf-symbol {
-            font-size: 31px;
-            margin: 0 3px;
-            background: linear-gradient(135deg, #00f2fe 0%, #6366f1 50%, #ec4899 100%);
+            font-size: 32px;
+            margin: 0 2px;
+            background: linear-gradient(135deg, #00f2fe 0%, #38bdf8 45%, #60a5fa 75%, #818cf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            animation: infinityGlow 4s infinite ease-in-out;
+            animation: infinityGlow 3.8s infinite ease-in-out;
         }
 
         @keyframes infinityGlow {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.6)); }
-            50% { transform: scale(1.14); filter: drop-shadow(0 0 14px rgba(236, 72, 153, 0.85)); }
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.75)); }
+            50% { transform: scale(1.15); filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.95)); }
         }
 
         .badge {
             font-size: 11px;
-            font-weight: 500;
-            background: rgba(99, 102, 241, 0.14);
-            color: #a5b4fc;
+            font-weight: 600;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.28), rgba(0, 242, 254, 0.14));
+            color: #bae6fd;
             padding: 4px 12px;
             border-radius: 8px;
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.35);
             white-space: nowrap;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
 
         .toolbar {
@@ -224,26 +239,29 @@
             cursor: pointer;
             transition: all 0.2s ease;
             border: 1px solid var(--border-subtle);
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(14, 38, 90, 0.45);
             color: var(--text-main);
             white-space: nowrap;
         }
 
         .btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.24);
+            background: rgba(37, 99, 235, 0.32);
+            border-color: rgba(56, 189, 248, 0.5);
             transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(3, 12, 38, 0.5);
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 4px 18px rgba(79, 70, 229, 0.45);
+            background: linear-gradient(135deg, #1d4ed8, #0284c7, #00c6ff);
+            background-size: 200% 200%;
+            border: 1px solid rgba(125, 211, 252, 0.45);
+            box-shadow: 0 4px 20px rgba(2, 132, 199, 0.5);
+            font-weight: 600;
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, #6366f1, #9333ea);
-            box-shadow: 0 6px 24px rgba(124, 58, 237, 0.65);
+            background: linear-gradient(135deg, #2563eb, #0ea5e9, #00f2fe);
+            box-shadow: 0 6px 26px rgba(0, 242, 254, 0.65);
         }
 
         .btn i {
@@ -255,10 +273,10 @@
             align-items: center;
             gap: 8px;
             font-size: 12.5px;
-            color: #cbd5e1;
+            color: #e0f2fe;
             padding: 7px 13px;
             border-radius: 10px;
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(4, 13, 36, 0.65);
             border: 1px solid var(--border-subtle);
             cursor: pointer;
             transition: 0.2s;
@@ -282,6 +300,7 @@
         .dot.off {
             background: var(--text-muted);
             box-shadow: none;
+            opacity: 0.5;
         }
 
         /* ==================== Workspace Layout ==================== */
@@ -309,7 +328,7 @@
             border-radius: 16px;
             min-width: 280px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            box-shadow: 0 22px 55px rgba(2, 8, 28, 0.72), inset 0 1px 0 rgba(125, 211, 252, 0.16);
             position: relative;
         }
 
@@ -317,7 +336,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(3, 5, 11, 0.85);
+            background: rgba(4, 13, 36, 0.88);
             border-bottom: 1px solid var(--border-subtle);
             padding: 0 10px;
             height: 48px;
@@ -342,11 +361,11 @@
             align-items: center;
             gap: 6px;
             padding: 9px 14px;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(30, 64, 175, 0.15);
             border: 1px solid transparent;
             border-bottom: none;
             border-radius: 10px 10px 0 0;
-            color: #94a3b8;
+            color: #93c5fd;
             font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
             font-weight: 600;
@@ -359,7 +378,7 @@
 
         .tab:hover {
             color: #ffffff;
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(37, 99, 235, 0.28);
         }
 
         .tab.active {
@@ -405,9 +424,9 @@
             gap: 6px;
             padding: 5px 10px;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            color: #f8fafc;
+            background: rgba(37, 99, 235, 0.2);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #f0f9ff;
             font-family: 'Vazirmatn', sans-serif;
             font-size: 11.5px;
             font-weight: 600;
@@ -417,8 +436,8 @@
         }
 
         .theme-btn:hover {
-            background: rgba(99, 102, 241, 0.25);
-            border-color: var(--primary);
+            background: rgba(37, 99, 235, 0.4);
+            border-color: var(--accent-cyan);
         }
 
         .theme-swatch-dot {
@@ -426,20 +445,20 @@
             height: 12px;
             border-radius: 3px;
             background: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
 
         .theme-dropdown {
             position: absolute;
             top: calc(100% + 8px);
             left: 0;
-            width: 220px;
-            background: rgba(12, 16, 30, 0.96);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            width: 235px;
+            background: rgba(6, 18, 46, 0.96);
+            backdrop-filter: blur(22px);
+            border: 1px solid rgba(56, 189, 248, 0.32);
             border-radius: 14px;
             padding: 8px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 20px 50px rgba(0, 5, 20, 0.85);
             display: none;
             flex-direction: column;
             gap: 4px;
@@ -458,9 +477,9 @@
 
         .theme-dropdown-header {
             font-size: 11px;
-            color: #94a3b8;
+            color: #93c5fd;
             padding: 4px 8px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
             margin-bottom: 2px;
         }
 
@@ -472,16 +491,16 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 12px;
-            color: #e2e8f0;
+            color: #e0f2fe;
             transition: 0.15s;
         }
 
         .theme-item:hover {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(56, 189, 248, 0.15);
         }
 
         .theme-item.active {
-            background: rgba(99, 102, 241, 0.22);
+            background: rgba(37, 99, 235, 0.35);
             color: #00f2fe;
             font-weight: 700;
         }
@@ -496,7 +515,7 @@
             width: 22px;
             height: 22px;
             border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(125, 211, 252, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -515,7 +534,7 @@
             gap: 8px;
         }
 
-        /* ==================== محیط داخلی ادیتور (پیش‌فرض سفید خالص و متن پررنگ) ==================== */
+        /* ==================== محیط داخلی ادیتور ==================== */
         .editors-wrapper {
             flex: 1;
             position: relative;
@@ -580,14 +599,14 @@
         }
 
         textarea.code-input::selection {
-            background: rgba(99, 102, 241, 0.28);
+            background: rgba(37, 99, 235, 0.28);
         }
 
         /* ==================== Resizer (دستگیره تغییر سایز دسکتاپ) ==================== */
         .gutter {
             width: 8px;
             border-radius: 99px;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(56, 189, 248, 0.12);
             cursor: col-resize;
             display: flex;
             align-items: center;
@@ -598,19 +617,19 @@
         }
 
         .gutter:hover, .gutter.dragging {
-            background: var(--primary);
-            box-shadow: 0 0 15px var(--primary);
+            background: var(--accent-cyan);
+            box-shadow: 0 0 16px var(--accent-cyan);
         }
 
         .gutter::after {
             content: "";
             width: 2px;
             height: 32px;
-            background: rgba(255, 255, 255, 0.35);
+            background: rgba(186, 230, 253, 0.6);
             border-radius: 2px;
         }
 
-        /* ==================== Preview Section (پنجره خروجی تیره و استودیویی) ==================== */
+        /* ==================== Preview Section (پنجره خروجی آبی استودیویی) ==================== */
         .preview-section {
             flex: 1;
             height: 100%;
@@ -623,7 +642,7 @@
             border-radius: 16px;
             min-width: 280px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            box-shadow: 0 22px 55px rgba(2, 8, 28, 0.72), inset 0 1px 0 rgba(125, 211, 252, 0.16);
             transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -634,12 +653,12 @@
             height: calc(100dvh - 20px) !important;
             z-index: 9999;
             border-color: var(--border-highlight);
-            box-shadow: 0 0 60px rgba(0, 0, 0, 0.95);
+            box-shadow: 0 0 70px rgba(2, 8, 28, 0.96);
         }
 
         .browser-bar {
             height: 48px;
-            background: rgba(3, 5, 11, 0.85);
+            background: rgba(4, 13, 36, 0.88);
             border-bottom: 1px solid var(--border-subtle);
             display: flex;
             align-items: center;
@@ -672,13 +691,13 @@
         .url-box {
             direction: ltr;
             unicode-bidi: isolate;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(15, 42, 96, 0.45);
             border: 1px solid var(--border-subtle);
             border-radius: 8px;
             padding: 4px 14px;
             font-family: 'JetBrains Mono', monospace;
             font-size: 11.5px;
-            color: var(--text-muted);
+            color: #bae6fd;
             display: flex;
             align-items: center;
             gap: 7px;
@@ -698,7 +717,7 @@
         }
 
         .icon-btn {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(30, 64, 175, 0.25);
             border: 1px solid var(--border-subtle);
             color: var(--text-main);
             padding: 5px 10px;
@@ -715,7 +734,7 @@
 
         .icon-btn:hover {
             background: var(--primary);
-            border-color: var(--primary);
+            border-color: var(--accent-cyan);
         }
 
         .iframe-wrapper {
@@ -751,30 +770,30 @@
         }
 
         .empty-orb {
-            width: 68px;
-            height: 68px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(0, 242, 254, 0.1));
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            width: 72px;
+            height: 72px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.28), rgba(0, 242, 254, 0.18));
+            border: 1px solid rgba(56, 189, 248, 0.45);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            color: #818cf8;
+            font-size: 32px;
+            color: #38bdf8;
             margin-bottom: 16px;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 12px 35px rgba(2, 132, 199, 0.35);
         }
 
         .empty-preview-state h3 {
-            font-size: 16px;
-            color: #e2e8f0;
+            font-size: 16.5px;
+            color: #f0f9ff;
             margin-bottom: 8px;
         }
 
         .empty-preview-state p {
             font-size: 13px;
             color: var(--text-muted);
-            max-width: 310px;
+            max-width: 320px;
             line-height: 1.7;
         }
 
@@ -788,7 +807,7 @@
         /* ==================== Console Drawer ==================== */
         .console-drawer {
             height: 155px;
-            background: rgba(4, 6, 14, 0.96);
+            background: rgba(3, 10, 28, 0.96);
             border-top: 1px solid var(--border-subtle);
             display: none;
             flex-direction: column;
@@ -802,7 +821,7 @@
 
         .console-header {
             padding: 7px 14px;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(37, 99, 235, 0.1);
             border-bottom: 1px solid var(--border-subtle);
             display: flex;
             justify-content: space-between;
@@ -826,23 +845,77 @@
         .log-item {
             padding: 5px 10px;
             border-radius: 6px;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(37, 99, 235, 0.12);
             border-left: 3px solid var(--accent-cyan);
-            color: #e2e8f0;
+            color: #e0f2fe;
             word-break: break-word;
         }
 
         .log-item.error {
             border-left-color: var(--danger);
-            background: rgba(244, 63, 94, 0.12);
+            background: rgba(244, 63, 94, 0.14);
             color: #fda4af;
+        }
+
+        /* ==================== مودال تایید پاکسازی کدها (جایگزین confirm) ==================== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 8, 24, 0.78);
+            backdrop-filter: blur(10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            padding: 16px;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+            animation: fadeInMenu 0.2s ease;
+        }
+
+        .modal-box {
+            background: linear-gradient(145deg, rgba(8, 24, 62, 0.96), rgba(4, 14, 38, 0.98));
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            border-radius: 18px;
+            padding: 24px;
+            max-width: 370px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+        }
+
+        .modal-box h4 {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .modal-box p {
+            font-size: 13px;
+            color: #bae6fd;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #e11d48, #f43f5e);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
         }
 
         /* ==================== نوار سوئیچ مخصوص موبایل و تبلت ==================== */
         .mobile-nav-bar {
             display: none;
             height: 56px;
-            background: rgba(7, 9, 18, 0.95);
+            background: rgba(4, 13, 36, 0.95);
             backdrop-filter: blur(20px);
             border-top: 1px solid var(--border-subtle);
             padding: 6px 12px;
@@ -854,8 +927,8 @@
         .mobile-nav-btn {
             flex: 1;
             border: 1px solid var(--border-subtle);
-            background: rgba(255, 255, 255, 0.03);
-            color: #94a3b8;
+            background: rgba(30, 64, 175, 0.15);
+            color: #93c5fd;
             border-radius: 12px;
             font-family: 'Vazirmatn', sans-serif;
             font-size: 13px;
@@ -869,10 +942,10 @@
         }
 
         .mobile-nav-btn.active {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.25), rgba(124, 58, 237, 0.25));
-            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.45), rgba(0, 242, 254, 0.25));
+            border-color: var(--accent-cyan);
             color: #ffffff;
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.25);
+            box-shadow: 0 0 18px rgba(0, 242, 254, 0.28);
         }
 
         /* Toast Notification */
@@ -880,13 +953,13 @@
             position: fixed;
             bottom: 24px;
             left: 24px;
-            background: rgba(10, 14, 26, 0.95);
+            background: rgba(6, 20, 52, 0.96);
             backdrop-filter: blur(16px);
             border: 1px solid var(--border-highlight);
             color: #fff;
             padding: 11px 18px;
             border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.65);
+            box-shadow: 0 15px 35px rgba(2, 8, 28, 0.8);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -949,7 +1022,6 @@
                 border-radius: 14px;
             }
 
-            /* در موبایل هر لحظه یکی از پنل‌ها با کیفیت کامل نمایش داده می‌شود */
             .workspace[data-mobile-view="code"] .preview-section {
                 display: none;
             }
@@ -998,8 +1070,9 @@
 </head>
 <body>
 
-    <!-- پس‌زمینه فوق‌حرفه‌ای استودیویی -->
+    <!-- پس‌زمینه فوق‌حرفه‌ای آبی پررنگ و یاقوتی فرهود -->
     <div class="pro-studio-bg">
+        <div class="royal-glow-layer"></div>
         <div class="light-beam beam-1"></div>
         <div class="light-beam beam-2"></div>
         <div class="beam-bottom"></div>
@@ -1010,8 +1083,8 @@
     <!-- نوار بالایی -->
     <header>
         <div class="brand">
-            <div class="logo" dir="ltr">Sin<span class="inf-symbol">∞</span>k</div>
-            <span class="badge">نسخه استودیو پرو</span>
+            <div class="logo" dir="ltr">farh<span class="inf-symbol">∞</span>d</div>
+            <span class="badge">استودیو رویال پرو</span>
         </div>
 
         <div class="toolbar">
@@ -1035,7 +1108,7 @@
                 <span>دانلود پروژه</span>
             </button>
 
-            <button class="btn" onclick="clearAllEditors()" title="پاک کردن تمام کدها">
+            <button class="btn" onclick="requestClearEditors()" title="پاک کردن تمام کدها">
                 <i class="ri-delete-bin-6-line"></i>
                 <span>پاکسازی</span>
             </button>
@@ -1045,7 +1118,7 @@
     <!-- محیط کاری اصلی -->
     <main class="workspace" id="workspace" data-mobile-view="code">
 
-        <!-- بخش کدنویسی (پیش‌فرض سفید خالص + متن پررنگ + منوی تغییر رنگ) -->
+        <!-- بخش کدنویسی -->
         <section class="coding-section" id="codingPanel">
             <div class="tabs-bar">
                 <div class="tabs-group">
@@ -1080,6 +1153,13 @@
                                 <i class="ri-check-line"></i>
                             </div>
 
+                            <div class="theme-item" onclick="changeEditorTheme('royal-blue', this)">
+                                <div class="theme-item-left">
+                                    <span class="mini-swatch" style="background: #07193e; color: #38bdf8;">Aa</span>
+                                    <span>آبی سلطنتی فرهود (Royal)</span>
+                                </div>
+                            </div>
+
                             <div class="theme-item" onclick="changeEditorTheme('studio-dark', this)">
                                 <div class="theme-item-left">
                                     <span class="mini-swatch" style="background: #070a14; color: #f1f5f9;">Aa</span>
@@ -1110,7 +1190,7 @@
 
                             <div class="theme-item" onclick="changeEditorTheme('cyber', this)">
                                 <div class="theme-item-left">
-                                    <span class="mini-swatch" style="background: #050811; color: #00f2fe;">Aa</span>
+                                    <span class="mini-swatch" style="background: #040d21; color: #00f2fe;">Aa</span>
                                     <span>نئون سایبرپانک</span>
                                 </div>
                             </div>
@@ -1158,7 +1238,7 @@
 
                 <div class="url-box" dir="ltr">
                     <i class="ri-terminal-window-line" style="color: #00f2fe;"></i>
-                    <span>sinook://live-preview</span>
+                    <span>farhood://live-preview</span>
                 </div>
 
                 <div class="preview-actions">
@@ -1187,7 +1267,7 @@
                     <div class="empty-orb">
                         <i class="ri-code-s-slash-line"></i>
                     </div>
-                    <h3>آماده شروع کدنویسی در <span dir="ltr">Sin∞k</span></h3>
+                    <h3>آماده شروع کدنویسی در <span dir="ltr">farh∞d</span></h3>
                     <p>کدهای HTML، CSS یا جاوااسکریپت خود را وارد کنید تا خروجی به صورت زنده در این پنجره نمایش داده شود.</p>
                 </div>
 
@@ -1197,7 +1277,7 @@
             <!-- کنسول اختصاصی جاوااسکریپت -->
             <div class="console-drawer" id="consoleDrawer">
                 <div class="console-header">
-                    <span dir="ltr"><i class="ri-terminal-line"></i> Sin∞k Console Output</span>
+                    <span dir="ltr"><i class="ri-terminal-line"></i> farh∞d Console Output</span>
                     <button class="icon-btn" onclick="clearConsole()" style="padding: 2px 8px;">پاک کردن</button>
                 </div>
                 <div class="console-logs" id="consoleLogs"></div>
@@ -1218,6 +1298,18 @@
         </button>
     </nav>
 
+    <!-- مودال تایید پاکسازی -->
+    <div class="modal-overlay" id="clearModal">
+        <div class="modal-box">
+            <h4>پاکسازی محیط کدنویسی</h4>
+            <p>آیا مطمئن هستید که می‌خواهید تمام کدهای نوشته شده در هر سه تب را پاک کنید؟</p>
+            <div class="modal-actions">
+                <button class="btn btn-danger" onclick="confirmClearAll()">بله، پاک شود</button>
+                <button class="btn" onclick="closeClearModal()">انصراف</button>
+            </div>
+        </div>
+    </div>
+
     <!-- پیغام پاپ‌آپ -->
     <div class="toast" id="toast">
         <i class="ri-flashlight-fill" style="color: #00f2fe; font-size: 18px;"></i>
@@ -1234,8 +1326,18 @@
                 gutterText: '#475569',
                 placeholder: '#94a3b8',
                 grid: 'rgba(15, 23, 42, 0.04)',
-                caret: '#4f46e5',
+                caret: '#2563eb',
                 name: 'سفید خالص'
+            },
+            'royal-blue': {
+                bg: '#07193e',
+                text: '#f0f9ff',
+                gutterBg: '#04102b',
+                gutterText: '#60a5fa',
+                placeholder: '#3b82f6',
+                grid: 'rgba(56, 189, 248, 0.05)',
+                caret: '#00f2fe',
+                name: 'آبی سلطنتی فرهود'
             },
             'studio-dark': {
                 bg: '#070a14',
@@ -1254,7 +1356,7 @@
                 gutterText: '#475569',
                 placeholder: '#64748b',
                 grid: 'rgba(15, 23, 42, 0.05)',
-                caret: '#4f46e5',
+                caret: '#2563eb',
                 name: 'نقره‌ای ملایم'
             },
             'warm': {
@@ -1278,13 +1380,13 @@
                 name: 'آبی یخی'
             },
             'cyber': {
-                bg: '#050811',
+                bg: '#040d21',
                 text: '#00f2fe',
-                gutterBg: '#020409',
-                gutterText: '#6366f1',
-                placeholder: '#334155',
+                gutterBg: '#020714',
+                gutterText: '#38bdf8',
+                placeholder: '#1e3a8a',
                 grid: 'rgba(0, 242, 254, 0.04)',
-                caret: '#ec4899',
+                caret: '#38bdf8',
                 name: 'نئون سایبرپانک'
             }
         };
@@ -1339,11 +1441,11 @@
             previewBtn.classList.toggle('active', view === 'preview');
         }
 
-        /* ==================== انیمیشن پس‌زمینه کدنویسی حرفه‌ای ==================== */
+        /* ==================== انیمیشن پس‌زمینه کدنویسی حرفه‌ای آبی فرهود ==================== */
         const canvas = document.getElementById('codeMatrixCanvas');
         const ctx = canvas.getContext('2d');
         let elements = [];
-        const codeSymbols = ['</>', '{ }', '()', '=>', 'const', 'let', '∞', 'div', 'px', 'flex', 'async', '01', '[];', '#'];
+        const codeSymbols = ['</>', '{ }', '()', '=>', 'const', 'farh∞d', '∞', 'div', 'px', 'flex', 'async', '01', '[];', '#'];
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
@@ -1360,13 +1462,13 @@
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = canvas.height + 30;
-                this.isSymbol = Math.random() > 0.55;
+                this.isSymbol = Math.random() > 0.52;
                 this.text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
-                this.size = this.isSymbol ? (Math.random() * 4 + 10) : (Math.random() * 2 + 1);
-                this.speedY = -(Math.random() * 0.45 + 0.15);
+                this.size = this.isSymbol ? (Math.random() * 4 + 10) : (Math.random() * 2.2 + 1);
+                this.speedY = -(Math.random() * 0.48 + 0.15);
                 this.speedX = (Math.random() - 0.5) * 0.25;
-                this.opacity = Math.random() * 0.25 + 0.05;
-                const colors = ['#6366f1', '#00f2fe', '#a855f7', '#64748b'];
+                this.opacity = Math.random() * 0.28 + 0.08;
+                const colors = ['#00f2fe', '#38bdf8', '#60a5fa', '#3b82f6', '#93c5fd'];
                 this.color = colors[Math.floor(Math.random() * colors.length)];
             }
             update() {
@@ -1380,14 +1482,14 @@
                 ctx.save();
                 ctx.globalAlpha = this.opacity;
                 if (this.isSymbol) {
-                    ctx.font = `500 ${this.size}px 'JetBrains Mono', monospace`;
+                    ctx.font = `600 ${this.size}px 'JetBrains Mono', monospace`;
                     ctx.fillStyle = this.color;
                     ctx.fillText(this.text, this.x, this.y);
                 } else {
                     ctx.beginPath();
                     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                     ctx.fillStyle = this.color;
-                    ctx.shadowBlur = 8;
+                    ctx.shadowBlur = 10;
                     ctx.shadowColor = this.color;
                     ctx.fill();
                 }
@@ -1397,7 +1499,7 @@
 
         function initStudioCanvas() {
             elements = [];
-            const count = Math.min(Math.floor(window.innerWidth / 25), 55);
+            const count = Math.min(Math.floor(window.innerWidth / 24), 58);
             for (let i = 0; i < count; i++) {
                 elements.push(new StudioNode());
             }
@@ -1557,7 +1659,7 @@
 
             previewFrame.srcdoc = combinedSource;
             if (manual) {
-                showToast('کدها با موفقیت اجرا شدند!');
+                showToast('کدها با موفقیت در farh∞d اجرا شدند!');
                 if (window.innerWidth <= 960) {
                     setMobileView('preview');
                 }
@@ -1615,6 +1717,7 @@
                 if (previewPanel.classList.contains('expanded')) {
                     togglePreviewFullscreen();
                 }
+                closeClearModal();
             }
         });
 
@@ -1623,7 +1726,7 @@
             const css = cssInput.value;
             const js = jsInput.value;
 
-            const fullCode = `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sin∞k Live Output</title><style>${css}</style></head><body>${html}<script>${js}<\/script></body></html>`;
+            const fullCode = `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>farh∞d Live Output</title><style>${css}</style></head><body>${html}<script>${js}<\/script></body></html>`;
             const blob = new Blob([fullCode], { type: 'text/html' });
             const url = URL.createObjectURL(blob);
             window.open(url, '_blank');
@@ -1675,7 +1778,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sin∞k Exported Project</title>
+    <title>farh∞d Exported Project</title>
     <style>
 ${cssInput.value}
     </style>
@@ -1692,21 +1795,31 @@ ${jsInput.value}
             const blob = new Blob([fullSource], { type: 'text/html;charset=utf-8' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'sinook-project.html';
+            link.download = 'farhood-project.html';
             link.click();
             showToast('فایل پروژه با موفقیت دانلود شد!');
         }
 
-        function clearAllEditors() {
-            if (!htmlInput.value && !cssInput.value && !jsInput.value) return;
-            if (confirm('آیا می‌خواهید تمام کدهای نوشته شده پاک شوند؟')) {
-                htmlInput.value = '';
-                cssInput.value = '';
-                jsInput.value = '';
-                ['html', 'css', 'js'].forEach(updateLineNumbers);
-                runCode();
-                showToast('محیط کدنویسی پاکسازی شد');
+        function requestClearEditors() {
+            if (!htmlInput.value && !cssInput.value && !jsInput.value) {
+                showToast('ویرایشگر در حال حاضر خالی است');
+                return;
             }
+            document.getElementById('clearModal').classList.add('open');
+        }
+
+        function closeClearModal() {
+            document.getElementById('clearModal').classList.remove('open');
+        }
+
+        function confirmClearAll() {
+            htmlInput.value = '';
+            cssInput.value = '';
+            jsInput.value = '';
+            ['html', 'css', 'js'].forEach(updateLineNumbers);
+            runCode();
+            closeClearModal();
+            showToast('محیط کدنویسی پاکسازی شد');
         }
 
         function showToast(msg) {
